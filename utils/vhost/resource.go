@@ -20,7 +20,6 @@ import (
 	"net/http"
 
 	frpLog "github.com/fatedier/frp/utils/log"
-	"github.com/fatedier/frp/utils/version"
 )
 
 var (
@@ -70,7 +69,6 @@ func getNotFoundPageContent() []byte {
 
 func notFoundResponse() *http.Response {
 	header := make(http.Header)
-	header.Set("server", "frp/"+version.Full())
 	header.Set("Content-Type", "text/html")
 
 	res := &http.Response{
